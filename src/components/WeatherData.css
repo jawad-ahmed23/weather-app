@@ -1,0 +1,82 @@
+.weatherData {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.weatherData__leftSide {
+  position: relative;
+}
+
+.weatherData__city {
+  font-size: 40px;
+  font-weight: 400;
+  color: #e2e0fe;
+}
+
+.weatherData__detail {
+  font-size: 18px;
+  color: #e2e0fe;
+  font-weight: 400;
+}
+
+.weatherData__temp {
+  font-size: 40px;
+  font-weight: 500;
+  color: #e2e0fe;
+  margin-top: 40px;
+}
+
+.weatherData__currentLocation {
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #e2e0fe;
+  border: none;
+  margin-top: 30px;
+}
+
+.weatherData__icon {
+  position: absolute;
+  bottom: 45px;
+  left: 87px;
+}
+
+.searchBar > form > input {
+  width: 200px;
+  height: 44px;
+
+  background: #e2e0fe;
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.searchBar > form > button {
+  width: 100px;
+  height: 44px;
+  background: #f2c94c;
+  border: 2px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.errorMessage {
+  color: rgb(246, 73, 73);
+  text-align: center;
+  margin-top: 50px;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.data {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
