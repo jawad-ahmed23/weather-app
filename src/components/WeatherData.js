@@ -7,6 +7,17 @@ function WeatherData() {
 
   const API_KEY = "f0ba54675c661fbc56350bd70a2a7e40";
 
+  const fetchData = (lat, lon, cityName, apiKey) => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?${
+        lat && lon ? `lat=${lat}&lon=${lon}` : `q=${cityName}`
+      }&appid=${apiKey}`
+    )
+      .then((result) => result.json())
+      .then((data) => setWeatherData(data))
+      .catch((error) => console.log(error));
+  };
+
   const getCurrentLocation = (e) => {
     if (e) {
       e.preventDefault();
@@ -15,23 +26,13 @@ function WeatherData() {
     navigator.geolocation.getCurrentPosition(function (position) {
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
-      fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
-      )
-        .then((result) => result.json())
-        .then((data) => setWeatherData(data))
-        .catch((error) => console.log(error));
+      fetchData(lat, lon, null, API_KEY);
     });
   };
 
   const getWeatherDataByCity = (e) => {
     e.preventDefault();
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`
-    )
-      .then((result) => result.json())
-      .then((data) => setWeatherData(data))
-      .catch((error) => console.log(error));
+    fetchData(null, null, cityName, API_KEY);
 
     setCityName("");
   };
